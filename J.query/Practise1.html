@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your product">
+    <input type="text" placeholder="Enter your price">
+    <button>Enter</button>
+    <table border="2px">
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Total</th>
+     </tr>
+    </table>
+    
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function(){
+        var total = 0
+        $('button').click(function(){
+            var item = $('input').eq(0).val();
+            var price = $('input').eq(1).val();
+            total = total + parseInt(price);
+            $('table').append('<tr><td>'+ item +'</td><td>'+ price +'</td><td>'+ total                                   +'</td></tr>');
+        })
+
+    })
+    </script>
+</body>
+</html>
